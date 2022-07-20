@@ -5,6 +5,7 @@
   padding: 0cm;
   list-style: none;
   text-decoration: none;
+  font-family: 'Baloo Da 2', serif
 }
 
 header{
@@ -13,6 +14,7 @@ header{
   width: 100%;
   height: 100px;
   background-color: #121214;
+  z-index: 150;
 }
 .logo {
   width: 40%
@@ -49,22 +51,103 @@ header{
   color: #fff;
 }
 
-.background-image{
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.background  {
+.destaques {
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8)
 }
+.slides {
+  width: 350%;
+  height: 100vh;
+  display: flex
+}
 
-.background img {
+.slides input{
+  display: none
+}
+.slide first{
+  width: 350%;
+  position: relative;
+  transition: 2s;
+}
+.slide{
   width: 100%;
-  height: 100%
+  transition: 1s
+}
+.slide img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden
+}
+.manual-navigation{
+  position: absolute;
+  display: flex;
+  left: 600px;
+  bottom: 45px
+}
+.manual-btn{
+  border: 4px solid #fff;
+  padding: 4px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s;
+  font-weight: 50
+}
+
+.manual-btn:not(:last-child) {
+  margin-right: 40px;
+}
+
+.manual-btn:hover{
+  background-color: #fff
+}
+
+#radio1:checked ~ .first{
+  margin-left:0;
+}
+#radio2:checked ~ .first{
+  margin-left: -75%;
+  width: 100%
+}
+#radio3:checked ~ .first{
+  margin-left: -240%;
+}
+
+
+.navigation-auto div{
+  border: 2px solid #20a6ff;
+  padding: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.4s
+}
+
+.navigation-auto{
+  width: 800px;
+  margin-top: 360px;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation-auto div:not(:last-child){
+  margin-right: 40px
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+  background-color: #fff; 
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+  background-color: #fff
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3{
+  background-color: #fff
+}
+
+#radio4:checked ~ .navigation-auto .auto-btn4{
+  background-color: #fff
 }
 
 .banner {
@@ -72,7 +155,7 @@ header{
   width: 594px;
   height: 309px;
   left: 117px;
-  top: 304px;
+  top: 200px;
 }
 .banner span {
   font-family: 'Baloo Da 2';
@@ -130,59 +213,116 @@ header{
 body{
   background-color: #121214;
 }
-.FormPreAgendamento{
-  text-align: center;
-  justify-content: center;
-  border-radius: 24px;
-  padding: 1rem;
-  margin-top: 5rem;
-}
-.FormPreAgendamento p{
-  font-family: 'Baloo Da 2', serif;
-  display: block;
-  margin-bottom: 1.2rem;
-}
-.FormPreAgendamento label{
-  display: flex;
-  margin-left: 5rem
-}
-.FormPreAgendamento form{
-  text-align: center;
-  justify-content: center;
+
+.container {
   background-color: #03ABF6;
-  width: 500px;
-  margin: auto;
-  padding: 2rem;
-  border-radius: 24px;
-}
-.FormPreAgendamento input{
-  border-radius: 10px;
-  border: none;
+  border-radius: 5px;
+  width: 50%;
   padding: 1rem;
-  width: 70%
+  height: 50%;
+  max-width: 100%;
+  overflow: hidden;
+  margin: auto;
+  border-radius: 1rem;
+}   
+.header{
+  padding: 30px 40px;
 }
-.FormPreAgendamento h1 {
-  font-family: 'Baloo Da 2';
+.header h1 {
+  font-family: 'Baloo Da 2', serif;
+  font-weight: 600;
   color: #fff;
-  font-size: 64px;
-  line-height: 108px;
+  font-size: 1.5rem;
+  line-height: 2rem;
   text-align: center;
-  font-weight: 400;
-  font-style: normal;
-}
-.FormPreAgendamento button {
-  border: none;
-  background-color: #FFFFFF;
-  border-radius: 15px;
-  font-family: 'Baloo Da 2';
-  font-size: 16px;
-  width: 277px;
-  height: 39px;
-  margin-top: 3rem;
-  cursor: pointer;
-  transition: 0.5s
+
 }
 
-.FormPreAgendamento button:hover{
-  opacity: 0.5
+.form {
+  padding: 0 40px 30px;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Baloo Da 2', serif  
+}
+
+.form-control input {
+  font-family: 'Baloo Da 2';
+  border-radius: 5px;
+  outline: 0;
+  display: block;
+  font-size: 12px;
+  width: 100%;
+  padding: 14px;
+  background-color: #fff;
+  border: none
+}
+
+.form-control.success input {
+  border: 3px solid green;
+}
+
+.form-control.error input {
+  border: 3px solid #DB5A5A;
+}
+
+.form-control.error i.ph-barricade {
+  visibility: visible;
+  color: #DB5A5A;
+  font-size: 19px;
+}
+
+.form-control.success i.ph-check {
+  visibility: visible;
+  color: green;
+  font-size: 19px;
+}
+
+.form-control.error small{
+  color: #DB5A5A;
+  visibility: visible;
+}
+
+.form-control i {
+  position: absolute;
+  top: 45px;
+  right: 10px;
+  visibility: hidden;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  margin-top: 5px;
+  font-size: 14px;
+  color: #DB5A5A
+}
+
+.form button {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;  
+  align-items:  center;
+  justify-content: center;
+  color: #000;
+  padding: 15px;  
+  font-size: 15px;
+  font-weight: 600;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 35px
+}
+
+.form button:hover {
+  background-color: #584ff5;
+  transition: 0.3s;
 }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <link rel="manifest" href="../assets/site.webmanifest">
+  <script src="https://unpkg.com/phosphor-icons"></script>
+  <title>Dental Care - Pré agendamento</title>
+</head>
+
+<body>>
+  <div class="container">
+    <div class="header">
+      <h1>Pré agendamento</h1>
+    </div>
+    <form class="form" id="form">
+      <div class="form-control">
+        <label for="username">Nome:</label>
+        <input type="text" name="" id="username">
+        <i class="ph-check"></i>
+        <i class="ph-barricade"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label for="useremail">Email:</label>
+        <input type="email" name="" id="useremail">
+        <i class="ph-check"></i>
+        <i class="ph-barricade"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label for="usertelefone">telefone:</label>
+        <input type="tel" name="" id="usertelefone">
+        <i class="ph-check"></i>
+        <i class="ph-barricade"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label for="horario">Horario:</label>
+        <input type="text" name="" id="horario">
+        <i class="ph-check"></i>
+        <i class="ph-barricade"></i>
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Unidade a ser atendido:</label>
+        <input type="text" placeholder="unidade a ser atendido" list="faixa" id="und">
+        <datalist id="faixa">
+          <option>João Pessoa</option>
+          <option>Rio Grande Do Sul</option>
+          <option>São Paulo</option>
+        </datalist>
+        <i class="ph-check"></i>
+        <i class="ph-barricade"></i>
+        <small>Error message</small>
+      </div>
+      <button type="submit" href="/homePage.html">Realizar Pré agendamento</button>
+    </form>
+  </div>
+  <script src="index.js"></script>
+</body>
+
+</html>
